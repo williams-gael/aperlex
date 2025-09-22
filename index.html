@@ -1,11 +1,150 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
+
 <head>
-    <title>Aperlex</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AperLex — Buscador de resoluciones</title>
+    <meta name="description"
+        content="AperLex: plataforma legaltech para encontrar resoluciones de entidades fiscalizadoras, con resúmenes y normativa relacionada." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#004866" />
+    <link rel="canonical" href="https://aperlex.com/" />
+
+    <!-- Open Graph (previews en redes/mensajería) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AperLex — Buscador de resoluciones" />
+    <meta property="og:description"
+        content="Accede a resoluciones con resúmenes ejecutivos y normativa relacionada. La herramienta que necesita tu equipo legal." />
+    <meta property="og:url" content="https://aperlex.com/" />
+    <meta property="og:image" content="assets/images/og-image.png" />
+
+    <!-- Google Analytics (GA4): sustituye G-XXXXXXXXXX por tu Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+    </script>
+
+    <!-- JSON-LD (SEO) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AperLex",
+    "url": "https://aperlex.com/",
+    "logo": "https://aperlex.com/assets/images/logo.svg",
+    "sameAs": []
+  }
+  </script>
+
+    <link rel="icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-    <h1>¡Hola!</h1>
-    <p>Bienvenido a Aperlex.com</p>    
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" aria-label="AperLex Home">
+                <img src="assets/images/logo.png" alt="AperLex logo" width="132" height="36" loading="eager" />
+            </a>
+            <nav class="top-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#signup">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1>Encuentra resoluciones en segundos</h1>
+                    <p class="subtitle">
+                        Accede a resoluciones con <strong>resúmenes ejecutivos</strong> y <strong>normativa
+                            relacionada</strong>. La herramienta que necesita tu equipo legal.
+                    </p>
+                    <ul class="bullets" role="list">
+                        <li>Búsqueda centralizada por entidad y materia</li>
+                        <li>Resúmenes claros para decisión rápida</li>
+                        <li>Enfoque en necesidades del sector</li>
+                    </ul>
+                </div>
+
+                <!-- SIGNUP -->
+                <aside id="signup" class="signup-card" aria-label="Formulario de registro">
+                    <h2>Recibe novedades de AperLex</h2>
+                    <p class="small">Sin spam. Solo información relevante del lanzamiento.</p>
+
+                    <!-- Honeypot (anti-bot) -->
+                    <form id="signup-form" class="form" method="post" action="#">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp"
+                            aria-hidden="true" />
+
+                        <div class="grid">
+                            <div class="field">
+                                <label for="full_name">Nombre y apellido</label>
+                                <input id="full_name" name="full_name" type="text" inputmode="text" autocomplete="name"
+                                    placeholder="Ej. Ana Pérez" required minlength="2"
+                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñÜü' -]{2,}"
+                                    title="Usa letras y espacios (mínimo 2 caracteres)" />
+                            </div>
+
+                            <div class="field">
+                                <label for="company">Empresa</label>
+                                <input id="company" name="company" type="text" inputmode="text"
+                                    autocomplete="organization" placeholder="Ej. Compañía Minera XYZ" maxlength="120" />
+                            </div>
+
+                            <div class="field">
+                                <label for="email">Correo</label>
+                                <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+                                    placeholder="nombre@empresa.com" required />
+                            </div>
+
+                            <div class="field">
+                                <label for="phone">Teléfono</label>
+                                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                                    placeholder="+51 999 999 999" pattern="^\\+?[0-9][0-9\\s\\-]{7,}$"
+                                    title="Usa números, espacios o guiones. Ej: +51 999 999 999" />
+                            </div>
+                        </div>
+
+                        <div class="consent">
+                            <input id="consent" name="consent" type="checkbox" required />
+                            <label for="consent">Acepto ser contactado con novedades de AperLex.</label>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Quiero recibir novedades</button>
+                        <p class="fine-print">Protegido con medidas anti-spam. Puedes cancelar en cualquier momento.</p>
+                    </form>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> AperLex. Todos los derechos reservados.</p>
+            <nav aria-label="Footer">
+                <a href="mailto:hola@aperlex.com">Contacto</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Fallback de año si no usas JS (puedes cambiar 2025 manualmente) -->
+    <style>
+        #year::after {
+            content: "2025";
+        }
+    </style>
 </body>
+
 </html>
